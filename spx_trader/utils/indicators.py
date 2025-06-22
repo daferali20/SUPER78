@@ -110,7 +110,7 @@ class TechnicalIndicators:
             rsi_ok = not config.get('use_rsi', True) or (
                 (trend == 'down' and df['rsi'].iloc[-1] <= config.get('rsi_oversold', 30)) or
                 (trend == 'up' and df['rsi'].iloc[-1] >= config.get('rsi_overbought', 70))
-                
+               ) 
             ma_ok = not config.get('use_ma', True) or (
                 (last['close'] < df['ma'].iloc[-1] and trend == 'up') or
                 (last['close'] > df['ma'].iloc[-1] and trend == 'down'))
